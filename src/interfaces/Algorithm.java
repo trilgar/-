@@ -6,5 +6,5 @@ import java.io.IOException;
 public interface Algorithm {
     double [] solve();
     void print();
-    void printf (FileWriter file) throws IOException;
+    void printf () throws IOException;
 }

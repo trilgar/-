@@ -1,4 +1,4 @@
-package rungeKutta;
+package solvingAlgorithms;
 
 import interfaces.Algorithm;
 import interfaces.Function;
@@ -43,7 +43,7 @@ public class RungeKuttaAlg implements Algorithm {
         x=x0;
         y=y0;
         result[0]=y0;
-        for(int i=1;x<x0+1;x+=h,i++){
+        for(int i=1;i<result.length;x+=h,i++){
             y=y+(h/6)*(k1()+2*k2()+2*k3()+k4());
             result[i]=y;
         }
@@ -59,9 +59,12 @@ public class RungeKuttaAlg implements Algorithm {
     }
 
     @Override
-    public void printf (FileWriter file) throws IOException {
+    public void printf () throws IOException {
+        file.write("h= "+this.h+"\n");
         file.write("Solved method RungeKutta gave us answer:\n");
-        file.write("y= "+ y +"\n");
-
+        for(int i=0; i<result.length;i++){
+            file.write("y"+i+"= "+result[i]+"\n");
+        }
+        file.write("\n");
     }
 }

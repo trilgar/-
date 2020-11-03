@@ -1,4 +1,4 @@
-package rungeKutta;
+package functions;
 
 import interfaces.Function;
 
